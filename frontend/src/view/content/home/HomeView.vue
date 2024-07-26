@@ -8,15 +8,11 @@ import Section2 from "@/view/content/content/Section2.vue";
 <template>
   <NavBar/>
   <div class="h-8rem"></div>
-
   <Section1/>
   <Section2/>
 
 </template>
 
 <style scoped>
-.image-width {
-  width: 80vh;
-  height: 100%;
-}
+
 </style>
