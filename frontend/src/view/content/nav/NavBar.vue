@@ -64,7 +64,7 @@ onUnmounted(() => {
       <div class="cursor-pointer font-semibold hover:bg-black-alpha-10 py-2 px-4 border-round">CONTACT US</div>
     </div>
 
-    <div v-else>Not done with NAV mobile view</div>
+    <div v-else class="text-sm font-bold">Not done with NAV mobile view</div>
   </div>
 </template>
 
