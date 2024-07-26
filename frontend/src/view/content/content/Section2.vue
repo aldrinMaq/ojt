@@ -7,13 +7,13 @@ import Compliant from "@/assets/image/section2/Compliant.png";
 
 <template>
   <section>
-    <div class="mt-7 grid grid-nogutter col-8 col-offset-2 flex align-content-end">
+    <div class="mt-7 grid grid-nogutter col-10 col-offset-1 xl:col-8 xl:col-offset-2 flex align-content-end">
       <div class="grid col-12 grid-nogutter">
-        <div class="col-12 flex justify-content-center font-semibold text-4xl">
+        <div class="col-12 flex justify-content-center text-center font-semibold text-4xl">
           Why Small Businesses Choose KUAN Solutions
         </div>
         <div class="grid col-12 grid-nogutter">
-          <div class="col-4 py-7">
+          <div class="col-12 xl:col-4 py-7 shadow-3">
             <div class="text-center">
               <img :src="NoFee" alt="icon"/>
             </div>
@@ -24,7 +24,7 @@ import Compliant from "@/assets/image/section2/Compliant.png";
               Support and product updates are included in the subscription.
             </div>
           </div>
-          <div class="col-4 py-7">
+          <div class="col-12 xl:col-4 py-7 shadow-3">
             <div class="text-center">
               <img :src="Support" alt="icon"/>
             </div>
@@ -35,7 +35,7 @@ import Compliant from "@/assets/image/section2/Compliant.png";
               Our dedicated team is always available to help you succeed.
             </div>
           </div>
-          <div class="col-4 py-7">
+          <div class="col-12 xl:col-4 py-7 shadow-3">
             <div class="text-center">
               <img :src="Compliant" alt="icon"/>
             </div>

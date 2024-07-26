@@ -4,7 +4,7 @@ import HomePageBanner from "@/assets/image/homepage-banner.png";
 </script>
 <template>
   <section>
-    <div class="mt-7 grid grid-nogutter col-8 col-offset-2 flex align-content-end">
+    <div class="mt-7 grid grid-nogutter col-10 col-offset-1 xl:col-8 xl:col-offset-2 flex align-content-end">
       <div class="grid col-12 grid-nogutter">
         <div class="col-12 xl:col-5">
           <div class="font-semibold text-5xl">
