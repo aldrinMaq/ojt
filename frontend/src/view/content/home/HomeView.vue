@@ -3,6 +3,7 @@ import NavBar from "@/view/content/nav/NavBar.vue";
 import Section1 from "@/view/content/content/Section1.vue";
 import Section2 from "@/view/content/content/Section2.vue";
 import {onMounted} from "vue";
+import {screenSize} from "@/util/GetScreenSizeUtil";
 
 onMounted(() => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -11,7 +12,7 @@ onMounted(() => {
 
 <template>
   <NavBar/>
-  <div class="h-6rem"></div>
+  <div :class="[screenSize === 'xl' ? 'h-6rem' : 'h-3rem']"></div>
   <Section1/>
   <Section2/>
   <div class="h-8rem text-center flex align-items-center justify-content-center">

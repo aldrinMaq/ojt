@@ -1,29 +1,11 @@
 <script setup lang="ts">
 import Logo from '@/assets/image/kuan-logo.png'
 import {onMounted, onUnmounted, ref} from "vue";
+import {screenSize, updateScreenSize} from "@/util/GetScreenSizeUtil";
 
 const showMenu = ref(false)
 
-const getScreenSize = () => {
-  const width = window.innerWidth;
-  if (width >= 1200) {
-    return 'xl';
-  } else if (width >= 992) {
-    return 'lg';
-  } else if (width >= 768) {
-    return 'md';
-  } else {
-    return 'sm';
-  }
-};
 
-// Reactive property to hold the current screen size
-const screenSize = ref(getScreenSize());
-
-// Function to update the screen size
-const updateScreenSize = () => {
-  screenSize.value = getScreenSize();
-};
 
 // Setup event listener for window resize
 onMounted(() => {
@@ -43,7 +25,7 @@ onUnmounted(() => {
       <img :src="Logo" alt="logo" class="w-4rem">
       <div class="ml-2 text-3xl font-bold">KUAN</div>
     </div>
-    <div class="flex gap-3" v-if="screenSize === 'xl'">
+    <div class="flex gap-3" v-if="screenSize === 'xl' || screenSize === 'lg' || screenSize === 'md'">
       <div class="cursor-pointer font-semibold hover:bg-black-alpha-10 py-2 px-4 border-round">HOME</div>
 
       <div @mouseover="showMenu = true" @mouseleave="showMenu = false">
