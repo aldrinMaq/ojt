@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import NavBar from "@/view/content/nav/NavBar.vue";
-import Section1 from "@/view/content/content/Section1.vue";
-import Section2 from "@/view/content/content/Section2.vue";
+import Section1 from "@/view/content/section/Section1.vue";
+import Section2 from "@/view/content/section/Section2.vue";
 import {onMounted} from "vue";
 import {screenSize} from "@/util/GetScreenSizeUtil";
 
