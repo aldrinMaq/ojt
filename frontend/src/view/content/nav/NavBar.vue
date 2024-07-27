@@ -58,7 +58,7 @@ const visibleTop = ref(false);
 <!--      <div class="cursor-pointer font-semibold">SUPPORT</div>-->
       <div class="cursor-pointer font-semibold hover:bg-black-alpha-10 py-2 px-4 border-round">ABOUT US</div>
       <div class="cursor-pointer font-semibold hover:bg-black-alpha-10 py-2 px-4 border-round"
-           @click="handleScrollToInquiry"
+           @click="handleScrollToInquiry(false)"
       >CONTACT US</div>
     </div>
 

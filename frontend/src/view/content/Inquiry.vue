@@ -5,11 +5,11 @@ import {useToast} from "primevue/usetoast";
 
 const toast = useToast();
 
-const name = ref('');
-const email = ref('');
-const country = ref('');
-const phone = ref('');
-const content = ref('');
+const name = ref<null | string>('');
+const email = ref<null | string>('');
+const country = ref<null | string>('');
+const phone = ref<null | string>('');
+const content = ref<null | string>('');
 
 const checkNotEmpty = computed(() => {
   return name.value &&
