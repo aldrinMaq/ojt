@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import HomePageBanner from "@/assets/image/homepage-banner.png";
 
+
+const emit = defineEmits(['scrollToInquiry'])
+
+const handleScrollToInquiry = () => {
+  emit('scrollToInquiry');
+};
+
+
 </script>
 <template>
   <section>
@@ -20,7 +28,7 @@ import HomePageBanner from "@/assets/image/homepage-banner.png";
             <div class="my-4 flex gap-2">
 
               <Button>Book a demo</Button>
-              <Button class="bg-white text-black-alpha-90 hover:bg-black-alpha-10 border-black-alpha-20">Contact Us</Button>
+              <Button @click="handleScrollToInquiry" class="bg-white text-black-alpha-90 hover:bg-black-alpha-10 border-black-alpha-20">Contact Us</Button>
 <!--              <Button class="w-14rem">Coming soon...</Button>-->
             </div>
           </div>

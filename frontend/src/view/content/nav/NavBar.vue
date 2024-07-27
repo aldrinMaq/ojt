@@ -2,8 +2,11 @@
 import Logo from '@/assets/image/kuan-logo.png'
 import {onMounted, onUnmounted, ref} from "vue";
 import {screenSize, updateScreenSize} from "@/util/GetScreenSizeUtil";
+import {useToast} from "primevue/usetoast";
 
 const showMenu = ref(false)
+const emit = defineEmits(['scrollToInquiry'])
+const toast = useToast();
 
 
 
@@ -16,7 +19,12 @@ onUnmounted(() => {
   window.removeEventListener('resize', updateScreenSize);
 });
 
-
+const handleScrollToInquiry = () => {
+  emit('scrollToInquiry');
+};
+const showInfo = () => {
+  toast.add({ severity: 'info', summary: 'Info!', detail: 'Coming soon...', life: 3000 });
+};
 </script>
 
 <template>
@@ -33,17 +41,19 @@ onUnmounted(() => {
           SOLUTIONS
         </div>
         <div v-if="showMenu" class="absolute flex flex-wrap bg-white flex-column gap-2 shadow-4 mb-2 cursor-pointer">
-          <div class="flex w-full hover:bg-green-100 px-4 py-3">Point of Sale</div>
-          <div class="flex w-full hover:bg-green-100 px-4 py-3">Inventory</div>
-          <div class="flex w-full hover:bg-green-100 px-4 py-3">Analytics</div>
-          <div class="flex w-full hover:bg-green-100 px-4 py-3">Purchasing</div>
-          <div class="flex w-full hover:bg-green-100 px-4 py-3">Hardware</div>
-          <div class="flex w-full hover:bg-green-100 px-4 py-3">Staff Management</div>
+          <div @click="showInfo" class="flex w-full hover:bg-green-100 px-4 py-3">Point of Sale</div>
+          <div @click="showInfo" class="flex w-full hover:bg-green-100 px-4 py-3">Inventory</div>
+          <div @click="showInfo" class="flex w-full hover:bg-green-100 px-4 py-3">Analytics</div>
+          <div @click="showInfo" class="flex w-full hover:bg-green-100 px-4 py-3">Purchasing</div>
+          <div @click="showInfo" class="flex w-full hover:bg-green-100 px-4 py-3">Hardware</div>
+          <div @click="showInfo" class="flex w-full hover:bg-green-100 px-4 py-3">Staff Management</div>
         </div>
       </div>
 <!--      <div class="cursor-pointer font-semibold">SUPPORT</div>-->
       <div class="cursor-pointer font-semibold hover:bg-black-alpha-10 py-2 px-4 border-round">ABOUT US</div>
-      <div class="cursor-pointer font-semibold hover:bg-black-alpha-10 py-2 px-4 border-round">CONTACT US</div>
+      <div class="cursor-pointer font-semibold hover:bg-black-alpha-10 py-2 px-4 border-round"
+           @click="handleScrollToInquiry"
+      >CONTACT US</div>
     </div>
 
     <div v-else class="text-sm font-bold">Not done with NAV mobile view</div>

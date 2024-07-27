@@ -14,7 +14,7 @@ import Compliant from "@/assets/image/section2/Compliant.png";
         </div>
         <div class="grid col-12 grid-nogutter">
           <div class="col-12 xl:col-4">
-            <div class="m-1 py-7 shadow-3">
+            <div class="m-1 py-7 hover:shadow-3 cursor-pointer">
               <div class="text-center">
                 <img :src="NoFee" alt="icon"/>
               </div>
@@ -27,7 +27,7 @@ import Compliant from "@/assets/image/section2/Compliant.png";
             </div>
           </div>
           <div class="col-12 xl:col-4">
-            <div class="m-1 py-7 shadow-3">
+            <div class="m-1 py-7 hover:shadow-3 cursor-pointer">
               <div class="text-center">
                 <img :src="Support" alt="icon"/>
               </div>
@@ -40,7 +40,7 @@ import Compliant from "@/assets/image/section2/Compliant.png";
             </div>
           </div>
           <div class="col-12 xl:col-4">
-            <div class="m-1 py-7 shadow-3">
+            <div class="m-1 py-7 hover:shadow-3 cursor-pointer">
               <div class="text-center">
                 <img :src="Compliant" alt="icon"/>
               </div>
