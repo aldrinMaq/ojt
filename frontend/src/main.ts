@@ -17,6 +17,7 @@ import Divider from 'primevue/divider';
 import Select from 'primevue/select';
 import Toast from 'primevue/toast';
 import ToastService from 'primevue/toastservice';
+import Drawer from 'primevue/drawer';
 
 const app = createApp(App);
 
@@ -42,5 +43,6 @@ app.component('Textarea', Textarea);
 app.component('Divider', Divider);
 app.component('Select', Select);
 app.component('Toast', Toast);
+app.component('Drawer', Drawer);
 
 app.mount('#app')

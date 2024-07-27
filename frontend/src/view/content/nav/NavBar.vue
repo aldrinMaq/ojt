@@ -19,12 +19,18 @@ onUnmounted(() => {
   window.removeEventListener('resize', updateScreenSize);
 });
 
-const handleScrollToInquiry = () => {
+const handleScrollToInquiry = (hideNav: boolean) => {
+  if (hideNav) {
+    visibleTop.value = false;
+  }
   emit('scrollToInquiry');
 };
 const showInfo = () => {
   toast.add({ severity: 'info', summary: 'Info!', detail: 'Coming soon...', life: 3000 });
 };
+
+const visibleTop = ref(false);
+
 </script>
 
 <template>
@@ -56,7 +62,36 @@ const showInfo = () => {
       >CONTACT US</div>
     </div>
 
-    <div v-else class="text-sm font-bold">Not done with NAV mobile view</div>
+    <div v-else class="mr-3">
+      <div @click="visibleTop = true" class="cursor-pointer">
+        <i class="pi pi-bars text-2xl"></i>
+      </div>
+    </div>
+
+    <Drawer v-model:visible="visibleTop" header="KUAN"  position="top" style="height: auto">
+      <div class="flex flex-column gap-3">
+        <div class="cursor-pointer font-semibold hover:bg-black-alpha-10 py-2 px-4 border-round">HOME</div>
+
+        <div @mouseover="showMenu = true" @mouseleave="showMenu = false">
+          <div class="cursor-pointer font-semibold hover:bg-black-alpha-10 py-2 px-4 border-round">
+            SOLUTIONS
+          </div>
+          <div v-if="showMenu" class="absolute flex flex-wrap bg-white flex-column gap-2 shadow-4 mb-2 cursor-pointer">
+            <div @click="showInfo" class="flex w-full hover:bg-green-100 px-4 py-3">Point of Sale</div>
+            <div @click="showInfo" class="flex w-full hover:bg-green-100 px-4 py-3">Inventory</div>
+            <div @click="showInfo" class="flex w-full hover:bg-green-100 px-4 py-3">Analytics</div>
+            <div @click="showInfo" class="flex w-full hover:bg-green-100 px-4 py-3">Purchasing</div>
+            <div @click="showInfo" class="flex w-full hover:bg-green-100 px-4 py-3">Hardware</div>
+            <div @click="showInfo" class="flex w-full hover:bg-green-100 px-4 py-3">Staff Management</div>
+          </div>
+        </div>
+        <!--      <div class="cursor-pointer font-semibold">SUPPORT</div>-->
+        <div class="cursor-pointer font-semibold hover:bg-black-alpha-10 py-2 px-4 border-round">ABOUT US</div>
+        <div class="cursor-pointer font-semibold hover:bg-black-alpha-10 py-2 px-4 border-round"
+             @click="handleScrollToInquiry(true)"
+        >CONTACT US</div>
+      </div>
+    </Drawer>
   </div>
 </template>
 
